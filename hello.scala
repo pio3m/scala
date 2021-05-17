@@ -11,7 +11,45 @@ object HelloWord {
     //    zad3
     //    zad4a //foldl
     //    zad4b //foldr
-    zad4c //foldl z "T"
+    //zad4c //foldl z "T"
+    // zad5
+    // zad6
+    // zad7
+
+  }
+
+  def zad7 = {
+
+    def findProductPriceByName(products: Map[String,Int], name: String): Option[Int] = {
+      products.get(name)
+    }
+
+    val product =
+      Map("Mysz" -> 5, "Klawiatura" -> 10, "Galaxy" -> 20, "Mac" -> 30)
+
+    println(findProductPriceByName(product, "Mysz"))
+    println(findProductPriceByName(product,"Mysz_super_gracza_2x_drozsza_ale_taka_sama")) // to sie marketing nazywa :)
+  }
+
+  def zad6 = {
+    val k1 = ("abc", 1, 5.5)
+    viewKrotka(k1)
+
+  }
+
+  def viewKrotka(krotka: Tuple3[String, Int, Double]) = {
+    println(krotka._1)
+    println(krotka._2)
+    println(krotka._3)
+  }
+
+  def zad5: Unit = {
+    val product =
+      Map("Mysz" -> 5, "Klawiatura" -> 10, "Galaxy" -> 20, "Mac" -> 30)
+
+    val newProduct = product.map { case (k, v) => (k, v * 0.9) }
+
+    println(newProduct)
   }
 
   def zad4c: Unit = {
@@ -24,7 +62,7 @@ object HelloWord {
 
     var listDay = createListDayWeek()
 
-    print(listDay.foldLeft("")(concatWhile(_,_)).drop(1))
+    print(listDay.foldLeft("")(concatWhile(_, _)).drop(1))
   }
 
   def zad4b: Unit = {
