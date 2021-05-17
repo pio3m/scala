@@ -1,10 +1,47 @@
+package tailrecfunc
+
+import scala.annotation.tailrec
+
 object HelloWord {
 
   def main(args: Array[String]) {
     //    zad1a
     //    zad1b
     //    zad1c
+
+    zad3
   }
+
+  var returnString: String = ""
+
+  def zad2: Unit = {
+    var listDay = createListDayWeek()
+
+    (printList(listDay))
+    println(returnString.dropRight(1))
+  }
+
+  def zad3: Unit = {
+
+    @tailrec
+    def printListTailRec(daysList: List[Any]): Unit = {
+      if (!daysList.isEmpty) {
+        returnString = returnString.concat((daysList.head + ","))
+        printListTailRec(daysList.tail)
+      }
+    }
+
+    printListTailRec(createListDayWeek())
+    println(returnString.dropRight(1))
+  }
+
+  def printList(daysList: List[Any]) {
+    if (!daysList.isEmpty) {
+      returnString = returnString.concat((daysList.head + ","))
+      printList(daysList.tail)
+    }
+  }
+
 
   def zad1b: Unit = {
     //        b. Pętli for wypisując tylko dni z nazwami zaczynającymi się na „P” - zmieniłem na T gdyz po ang. nie ma P :)
