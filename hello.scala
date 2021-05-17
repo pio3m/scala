@@ -8,8 +8,33 @@ object HelloWord {
     //    zad1a
     //    zad1b
     //    zad1c
+    //    zad3
+    //    zad4a //foldl
+    //    zad4b //foldr
+    zad4c //foldl z "T"
+  }
 
-    zad3
+  def zad4c: Unit = {
+    def concatWhile(dayA: String, dayB: String): String = {
+      if (dayB.startsWith("T"))
+        dayA
+      else
+        dayA.concat(",").concat(dayB)
+    }
+
+    var listDay = createListDayWeek()
+
+    print(listDay.foldLeft("")(concatWhile(_,_)).drop(1))
+  }
+
+  def zad4b: Unit = {
+    var listDay = createListDayWeek()
+    print(listDay.foldRight("")(_.concat(",").concat(_)).dropRight(1))
+  }
+
+  def zad4a: Unit = {
+    var listDay = createListDayWeek()
+    print(listDay.foldLeft("")(_.concat(",").concat(_)).drop(1))
   }
 
   var returnString: String = ""
