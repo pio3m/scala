@@ -3,22 +3,22 @@ package tailrecfunc
 import scala.annotation.tailrec
 import scala.math.abs
 
-object HelloWord {
+object Part_1 {
 
   def main(args: Array[String]) {
-    //    zad1a
-    //    zad1b
-    //    zad1c
-    //    zad3
-    //    zad4a //foldl
-    //    zad4b //foldr
-    //    zad4c //foldl z "T"
-    //    zad5
-    //    zad6
-    //    zad7
-    //    print( zad8(List(0,1,2,3,0,4,0)))
-    //    print( zad9(List(1,2,3,4)))
-    //    print( zad10( List(-6,-5,-4,-3,-2,-1,0,1,2,11,12,13,14)) )
+        zad1a
+        zad1b
+        zad1c
+        zad3
+        zad4a //foldl
+        zad4b //foldr
+        zad4c //foldl z "T"
+        zad5
+        zad6
+        zad7
+        print( zad8(List(0,1,2,3,0,4,0)))
+        print( zad9(List(1,2,3,4)))
+        print( zad10( List(-6,-5,-4,-3,-2,-1,0,1,2,11,12,13,14)) )
   }
 
   def zad10(lst: List[Float]): List[Float] = {
