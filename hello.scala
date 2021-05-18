@@ -1,6 +1,7 @@
 package tailrecfunc
 
 import scala.annotation.tailrec
+import scala.math.abs
 
 object HelloWord {
 
@@ -11,16 +12,35 @@ object HelloWord {
     //    zad3
     //    zad4a //foldl
     //    zad4b //foldr
-    //zad4c //foldl z "T"
-    // zad5
-    // zad6
-    // zad7
+    //    zad4c //foldl z "T"
+    //    zad5
+    //    zad6
+    //    zad7
+    //    print( zad8(List(0,1,2,3,0,4,0)))
+    //    print( zad9(List(1,2,3,4)))
+    //    print( zad10( List(-6,-5,-4,-3,-2,-1,0,1,2,11,12,13,14)) )
+  }
 
+  def zad10(lst: List[Float]): List[Float] = {
+    val filtered = lst.filter(x =>(x > -5 && x < 12))
+    filtered.map(x => abs(x))
+  }
+
+  def zad9(lst: List[Int]): List[Int] = {
+    lst.map(x => x + 1)
+  }
+
+  def zad8(lst: List[Int], acc: List[Int] = List.empty): List[Int] = {
+    lst match {
+      case Nil => acc
+      case 0 :: t => zad8(t, acc)
+      case h :: t => zad8(t, h :: acc)
+    }
   }
 
   def zad7 = {
 
-    def findProductPriceByName(products: Map[String,Int], name: String): Option[Int] = {
+    def findProductPriceByName(products: Map[String, Int], name: String): Option[Int] = {
       products.get(name)
     }
 
@@ -28,7 +48,7 @@ object HelloWord {
       Map("Mysz" -> 5, "Klawiatura" -> 10, "Galaxy" -> 20, "Mac" -> 30)
 
     println(findProductPriceByName(product, "Mysz"))
-    println(findProductPriceByName(product,"Mysz_super_gracza_2x_drozsza_ale_taka_sama")) // to sie marketing nazywa :)
+    println(findProductPriceByName(product, "Mysz_super_gracza_2x_drozsza_ale_taka_sama")) // to sie marketing nazywa :)
   }
 
   def zad6 = {
